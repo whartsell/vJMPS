@@ -101,8 +101,8 @@ namespace vJMPSTests
 
         public static string Linear = @"{
 	        'Outboard': {
-		        'x': [0,6001],
-		        'data': [17.5,19.6]
+		        'x': [0,8000],
+		        'data': [17.3,19.9]
 	        }
         }";
     }

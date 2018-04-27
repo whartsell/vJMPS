@@ -43,7 +43,13 @@ namespace vJMPSTests
             performanceChartMock = new PerformanceChartMock(TestData.Linear);
             var linear = performanceChartMock.MocktoChartSeries("Outboard", "x", "data");
             Assert.IsInstanceOfType(linear, typeof(ChartSeries));
-            Assert.AreEqual(18.9, linear.Interpolate(4000).SigFigs(3));
+            Assert.AreEqual(18.0, linear.Interpolate(1318).SigFigs(3));
+        }
+        [TestMethod]
+        public void ExperimentalTests()
+        {
+            Dictionary<double,ChartSeries> test = SeriesTestData.buildTestData();
+            
         }
     }
 }
