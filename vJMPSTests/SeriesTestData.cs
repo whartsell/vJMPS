@@ -11,13 +11,27 @@ namespace vJMPSTests
     {
         public static Dictionary<double,ChartSeries> buildTestData() {
             Dictionary<double,ChartSeries> seriesMap = new Dictionary<double,ChartSeries>();
-            ChartSeries inboard1 = new ChartSeries({0,6250},{17.3,21.9});
-            ChartSeries inboard2 = new ChartSeries({0,1000,6600},{17.3,17.8,21.6});
-            ChartSeries inboard3 = new ChartSeries({0,2000,6750},{17.3,18.2,21.3});
-            ChartSeries inboard4 = new ChartSeries({0,3100,6900},{17.3,18.5,21.0});
-            ChartSeries inboard5 = new ChartSeries({0,4100,7150},{17.3,18.8,20.8});
-            ChartSeries inboard6 = new ChartSeries({0,5100,7250},{17.3,19.1,20.5});
-            ChartSeries inboard7 = new ChartSeries({0,6000,7400},{17.3,19.4,20.2});
+            double[] x1 = {0,6250};
+            double[] y1 = {17.3,21.9};
+            ChartSeries inboard1 = new ChartSeries(x1,y1);
+            double[] x2 = {0,1000,6600};
+            double[] y2 = {17.3,17.8,21.6};         
+            ChartSeries inboard2 = new ChartSeries(x2,y2);
+            double[] x3 = {0,2000,6750};
+            double[] y3 = {17.3,18.2,21.3};
+            ChartSeries inboard3 = new ChartSeries(x3,y3);
+            double[] x4 = {0,3100,6900};
+            double[] y4 = {17.3,18.5,21.0};
+            ChartSeries inboard4 = new ChartSeries(x4,y4);
+            double[] x5 = {0,4100,7150};
+            double[] y5 = {17.3,18.8,20.8};
+            ChartSeries inboard5 = new ChartSeries(x5,y5);
+            double[] x6 = {0,5100,7250};
+            double[] y6 = {17.3,19.1,20.5};
+            ChartSeries inboard6 = new ChartSeries(x6,y6);
+            double[] x7 = {0,6000,7400};
+            double[] y7 = {17.3,19.4,20.2};
+            ChartSeries inboard7 = new ChartSeries(x7,y7);
             seriesMap.Add(17.3,inboard1);
             seriesMap.Add(17.8,inboard2);
             seriesMap.Add(18.2,inboard3);
