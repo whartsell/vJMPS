@@ -9,7 +9,7 @@ namespace vJMPSTests
 {
     public static class SeriesTestData 
     {
-        static readonly CompoundChartSeries InboardCompoundSeries;
+        public static readonly CompoundChartSeries InboardCompoundSeries;
         static SeriesTestData()
         {
                 InboardCompoundSeries = new CompoundChartSeries();
@@ -32,7 +32,7 @@ namespace vJMPSTests
 
             double[] x4 = {3100,6900};
             double[] y4 = {18.5,21.0};
-            InboardCompoundSeries.Add(18.5,ChartSeries(x4,y4));
+            InboardCompoundSeries.Add(18.5,new ChartSeries(x4,y4));
 
             double[] x5 = {4100,7150};
             double[] y5 = {18.8,20.8};
@@ -44,7 +44,7 @@ namespace vJMPSTests
 
             double[] x7 = {6000,7400};
             double[] y7 = {19.4,20.2};
-            InboardCompoundSeries.Add(19.1,new ChartSeries(x7,y7));
+            InboardCompoundSeries.Add(19.4,new ChartSeries(x7,y7));
         }
 
     }

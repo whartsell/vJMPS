@@ -47,10 +47,8 @@ namespace vJMPSTests
             Assert.AreEqual(18.0, linear.Interpolate(1318).SigFigs(3));
         }
         [TestMethod]
-        public void ExperimentalTests()
-        {
-            Dictionary<double,ChartSeries> test = SeriesTestData.buildTestData();
-           var outboard =  PerformanceChartMock.interpolateBetweenSeries(test, 2624, 18.0);
+        public void ExperimentalTests() { 
+           var outboard =  SeriesTestData.InboardCompoundSeries.Interpolate(2624, 18.0);
             Assert.AreEqual(18.8, outboard.SigFigs(3));
             
         }
