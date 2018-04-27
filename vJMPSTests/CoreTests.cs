@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using System.Collections.Generic;
 using vJMPS.Core;
 
 namespace vJMPSTests
@@ -49,6 +50,8 @@ namespace vJMPSTests
         public void ExperimentalTests()
         {
             Dictionary<double,ChartSeries> test = SeriesTestData.buildTestData();
+           var outboard =  PerformanceChartMock.interpolateBetweenSeries(test, 2624, 18.0);
+            Assert.AreEqual(18.8, outboard.SigFigs(3));
             
         }
     }
