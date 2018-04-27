@@ -39,6 +39,11 @@ namespace vJMPSTests
             performanceChartMock = new PerformanceChartMock(TestData.PTFS);
             var results2 = performanceChartMock.MocktoChartSeries("PTFS", "x", "data");
             Assert.IsInstanceOfType(results2,typeof(ChartSeries));
+            Assert.AreEqual(77.6, results2.Interpolate(50));
+            performanceChartMock = new PerformanceChartMock(TestData.Linear);
+            var linear = performanceChartMock.MocktoChartSeries("Outboard", "x", "data");
+            Assert.IsInstanceOfType(linear, typeof(ChartSeries));
+            Assert.AreEqual(18.9, linear.Interpolate(4000).SigFigs(3));
         }
     }
 }

@@ -54,5 +54,12 @@ namespace vJMPSTests
                 'data': [86.6, 86.6, 86.45, 86.05, 85.4, 84.5, 83.35, 82.1, 80.75, 79.3, 77.6]
             }
         }";
+
+        public static string Linear = @"{
+	        'Outboard': {
+		        'x': [0,6001],
+		        'data': [17.5,19.6]
+	        }
+        }";
     }
 }
