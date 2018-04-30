@@ -38,7 +38,7 @@ namespace vJMPSTests
             Assert.AreEqual(18.8, inboard.SigFigs(3));
             var centerLine = CGPositionTestData.CenterLineCompoundSeries.Interpolate(inboardWeight+outboardWeight+centerWeight, inboardWeight+outboardWeight);
             //Assert.AreEqual(15.3, centerLine.SigFigs(3)); // this one should be looked at
-            var missile = CGPositionTestData.MissileCompoundSeries.Interpolate(inboardWeight+outboardWeight+centerWeight+missileWeight,inboardWeight+outboardWeight+centerWeight);
+            var missile = CGPositionTestData.MissileSeries.Interpolate(inboardWeight+outboardWeight+centerWeight);
             Assert.AreEqual(0,missile.SigFigs(3));
             
         }
