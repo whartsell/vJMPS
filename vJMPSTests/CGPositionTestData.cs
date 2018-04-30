@@ -22,6 +22,8 @@ namespace vJMPSTests
             buildInboardData();
             buildOutboardData();
             buildCenterData();
+            BuildMissileData();
+            BuildGunData();
         }
 
         private static void BuildGunData()
