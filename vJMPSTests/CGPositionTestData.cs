@@ -9,7 +9,8 @@ namespace vJMPSTests
 {
     public static class CGPositionTestData
     {
-        public static readonly CompoundChartSeries InboardCompoundSeries, CenterLineCompoundSeries, MissileCompoundSeries;
+        public static readonly CompoundChartSeries InboardCompoundSeries, CenterLineCompoundSeries, 
+            AmmoCompoundSeries,MissileCompoundSeries;
         public static readonly ChartSeries OutboardSeries;
         static CGPositionTestData()
         {
@@ -17,10 +18,87 @@ namespace vJMPSTests
             CenterLineCompoundSeries = new CompoundChartSeries();
             OutboardSeries = new ChartSeries();
             MissileCompoundSeries = new CompoundChartSeries();
+            AmmoCompoundSeries = new CompoundChartSeries();
             buildInboardData();
             buildOutboardData();
             buildCenterData();
         }
+
+        private static void BuildGunData()
+        {
+            			double[] x1 = {0,400};
+            double[] y1 = {0,-5.4};
+            AmmoCompoundSeries.Add(0, new ChartSeries(x1,y1));
+			
+			double[] x2 = {500,750};
+            double[] y2 = {0,-5.3};
+            AmmoCompoundSeries.Add(500, new ChartSeries(x2,y2));
+			
+			double[] x3 = {1000,1300};
+            double[] y3 = {0,-5.1};
+            AmmoCompoundSeries.Add(1000, new ChartSeries(x3,y3));
+			
+			double[] x4 = {1500,1800};
+            double[] y4 = {0,-4.95};
+            AmmoCompoundSeries.Add(1500, new ChartSeries(x4,y4));
+			
+			double[] x5 = {2000,2300};
+            double[] y5 = {0,-4.8};
+            AmmoCompoundSeries.Add(2000, new ChartSeries(x5,y5));
+			
+			double[] x6 = {2500,2800};
+            double[] y6 = {0,-4.6};
+            AmmoCompoundSeries.Add(2500, new ChartSeries(x6,y6));
+			
+			double[] x7 = {3000,3300};
+            double[] y7 = {0,-4.5};
+            AmmoCompoundSeries.Add(3000, new ChartSeries(x7,y7));
+			
+			double[] x8 = {3500,3750};
+            double[] y8 = {0,-4.3};
+            AmmoCompoundSeries.Add(3500, new ChartSeries(x8,y8));
+			
+			double[] x9 = {4000,4250};
+            double[] y9 = {0,-4.2};
+            AmmoCompoundSeries.Add(4000, new ChartSeries(x9,y9));
+			
+			double[] x10 = {4500,4800};
+            double[] y10 = {0,-4.1};
+            AmmoCompoundSeries.Add(4500, new ChartSeries(x10,y10));
+			
+			double[] x11 = {5000,5250};
+            double[] y11 = {0,-4.0};
+            AmmoCompoundSeries.Add(5000, new ChartSeries(x11,y11));
+			
+			double[] x12 = {5500,5700};
+            double[] y12 = {0,-3.95};
+            AmmoCompoundSeries.Add(5500, new ChartSeries(x12,y12));
+			
+			double[] x13 = {6000,6200};
+            double[] y13 = {0,-3.9};
+            AmmoCompoundSeries.Add(6000, new ChartSeries(x13,y13));
+			
+			double[] x14 = {6500,6700};
+            double[] y14 = {0,-3.8};
+            AmmoCompoundSeries.Add(6500, new ChartSeries(x14,y14));
+			
+			double[] x15 = {7000,7200};
+            double[] y15 = {0,-3.75};
+            AmmoCompoundSeries.Add(7000, new ChartSeries(x15,y15));
+			
+			double[] x16 = {7500,7700};
+            double[] y16 = {0,-3.7};
+            AmmoCompoundSeries.Add(7500, new ChartSeries(x16,y16));
+			
+			double[] x17 = {8000,8200};
+            double[] y17 = {0,-3.65};
+            AmmoCompoundSeries.Add(8000, new ChartSeries(x17,y17));
+			
+			double[] x18 = {8500,8700};
+            double[] y18 = {0,-3.6};
+            AmmoCompoundSeries.Add(8500, new ChartSeries(x18,y18));
+        }
+
         private static void BuildMissileData() 
         {
             double[] x1 = {0,350};
