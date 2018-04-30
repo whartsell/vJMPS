@@ -110,8 +110,8 @@ namespace vJMPSTests
         }
         private static void buildOutboardData()
         {
-            double[] x = { 0, 8000 }; //sheet3
-            double[] y = { 17.5,19.9 }; //sheet3
+            double[] x = { 0, 1000,2000,3000,4000,5000,6000,7000,8000 }; //sheet3
+            double[] y = { 17.5,17.8,18.2,18.5,18.8,19.1,19.4,19.6,19.9 }; //sheet3
             //double[] x = { 0, 6100 };
             //double[] y = { 17.5, 19.6 };
             OutboardSeries.XRange = x;
