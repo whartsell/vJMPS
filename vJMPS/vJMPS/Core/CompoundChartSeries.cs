@@ -28,7 +28,9 @@ namespace vJMPS.Core
             List<double> seriesValues = new List<double>();
             foreach (KeyValuePair<double, ChartSeries> item in _compoundSeries)
             {
+                Console.WriteLine("key:" + item.Key);
                 seriesKeys.Add(item.Key);
+                Console.WriteLine("Value:" + item.Value.Interpolate(x));
                 seriesValues.Add(item.Value.Interpolate(x));
             }
             interpolatedChartSeries = new ChartSeries(seriesKeys.ToArray(), seriesValues.ToArray());

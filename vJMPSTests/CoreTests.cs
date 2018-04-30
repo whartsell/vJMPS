@@ -9,7 +9,7 @@ namespace vJMPSTests
     public class CoreTests
     {
         [TestMethod]
-        public void SigFigsPositiveTests()
+        public void SigFigsTests()
         {
             double test1 = 1234.56789;
             Assert.AreEqual(1235, test1.SigFigs(4));
@@ -21,35 +21,20 @@ namespace vJMPSTests
             Assert.AreEqual(-1000, test2.SigFigs(1));
         }
 
-        [TestMethod]
-        public void ChartSeriesTests()
-        {
-            double[] x = { 2, 20, 40, 60, 82 };
-            double[] y = { 43, 53, 64, 75, 86 };
-            ChartSeries test = new ChartSeries(x, y);
-            Assert.AreEqual(48, test.Interpolate(11).SigFigs(2));
-        }
+        
 
+        
         [TestMethod]
-        public void PerformanceChartTests()
-        {
-            
-            PerformanceChartMock performanceChartMock = new PerformanceChartMock(TestData.SingleEngineROC);
-            var results1 = performanceChartMock.MockToChartSeriesMap("pressureAltitudes");
-            Assert.AreEqual(4, results1.Count);
-            performanceChartMock = new PerformanceChartMock(TestData.PTFS);
-            var results2 = performanceChartMock.MocktoChartSeries("PTFS", "x", "data");
-            Assert.IsInstanceOfType(results2,typeof(ChartSeries));
-            Assert.AreEqual(77.6, results2.Interpolate(50));
-            performanceChartMock = new PerformanceChartMock(TestData.Linear);
-            var linear = performanceChartMock.MocktoChartSeries("Outboard", "x", "data");
-            Assert.IsInstanceOfType(linear, typeof(ChartSeries));
-            Assert.AreEqual(18.0, linear.Interpolate(1318).SigFigs(3));
-        }
-        [TestMethod]
-        public void ExperimentalTests() { 
-           var outboard =  SeriesTestData.InboardCompoundSeries.Interpolate(2624, 18.0);
-            Assert.AreEqual(18.8, outboard.SigFigs(3));
+        public void ChartSeriesTests() {
+            double outboardWeight = 1318;
+            double inboardWeight = 1306;
+            double centerWeight = 2174;
+            var outboard = CGPositionTestData.OutboardSeries.Interpolate(outboardWeight);
+            Assert.AreEqual(17.9, outboard.SigFigs(3));
+            var inboard =  CGPositionTestData.InboardCompoundSeries.Interpolate(inboardWeight+outboardWeight, inboardWeight);
+            Assert.AreEqual(18.8, inboard.SigFigs(3));
+            var centerLine = CGPositionTestData.CenterLineCompoundSeries.Interpolate(inboardWeight+outboardWeight+centerWeight, centerWeight);
+            Assert.AreEqual(15.3, centerLine.SigFigs(3)); // this one should be looked at
             
         }
     }
