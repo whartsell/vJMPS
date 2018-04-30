@@ -120,16 +120,16 @@ namespace vJMPSTests
         }
         private static void buildInboardData()
         {
-            double[] x1 = { 0, 6250 };
-            double[] y1 = { 17.5, 21.9 };
+            double[] x1 = { 0,1000,2000,3000,4000,5000, 6250 };
+            double[] y1 = { 17.5,18.3,19.1,19.85,20.6,21.2,21.9 };
             InboardCompoundSeries.Add(0, new ChartSeries(x1, y1));
 
-            double[] x2 = { 1000, 6600 };
-            double[] y2 = { 17.8, 21.6 };
+            double[] x2 = { 1000, 2000,3000,4000,5000,6000,6600 };
+            double[] y2 = { 17.8, 18.6,19.4,20.0,20.75,21.3,21.6 };
             InboardCompoundSeries.Add(1000, new ChartSeries(x2, y2));
 
-            double[] x3 = { 2000, 6750 };
-            double[] y3 = { 18.2, 21.3 };
+            double[] x3 = { 2000,3000,4000,5000,6000, 6750 };
+            double[] y3 = { 18.2,18.9,19.6,20.2,20.85 21.3 };
             InboardCompoundSeries.Add(2000, new ChartSeries(x3, y3));
 
             double[] x4 = { 3100, 6900 };
