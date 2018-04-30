@@ -29,12 +29,16 @@ namespace vJMPSTests
             double outboardWeight = 1318;
             double inboardWeight = 1306;
             double centerWeight = 2174;
+            
+            
             var outboard = CGPositionTestData.OutboardSeries.Interpolate(outboardWeight);
             Assert.AreEqual(17.9, outboard.SigFigs(3));
             var inboard =  CGPositionTestData.InboardCompoundSeries.Interpolate(inboardWeight+outboardWeight, inboardWeight);
             Assert.AreEqual(18.8, inboard.SigFigs(3));
             var centerLine = CGPositionTestData.CenterLineCompoundSeries.Interpolate(inboardWeight+outboardWeight+centerWeight, centerWeight);
             Assert.AreEqual(15.3, centerLine.SigFigs(3)); // this one should be looked at
+            var missile = CGPositionTestData.MissileCompoundSeries.Interpolate(inboardWeight+outboardWeight+centerWeight);
+            Assert.AreEqual(0,missile.SigFigs(3));
             
         }
     }
