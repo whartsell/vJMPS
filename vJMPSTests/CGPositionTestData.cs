@@ -151,55 +151,55 @@ namespace vJMPSTests
 
         private static void buildCenterData()
         {
-            double[] x1 = { 0, 4000 };
+            double[] x1 = { 0, 1000,2000,3000,4000 };
             double[] y1 = { 17.5, 11.6 };
             CenterLineCompoundSeries.Add(0, new ChartSeries(x1, y1));
 
-            double[] x2 = { 500, 4300 };
+            double[] x2 = { 500, 1500,2500,3500,4300 };
             double[] y2 = { 17.75, 12.3 };
             CenterLineCompoundSeries.Add(500, new ChartSeries(x2, y2));
 
-            double[] x3 = { 1000, 4600 };
+            double[] x3 = { 1000, 2000,3000,4000, 4600 };
             double[] y3 = { 18.3, 13.0 };
             CenterLineCompoundSeries.Add(1000, new ChartSeries(x3, y3));
 
-            double[] x4 = { 1500, 4900 };
+            double[] x4 = { 1500, 2500,3500,4500,4900 };
             double[] y4 = { 18.7, 14.7 };
             CenterLineCompoundSeries.Add(1500, new ChartSeries(x4, y4));
 
-            double[] x5 = { 2000, 5300 };
-            double[] y5 = {19.1,14.3 };
+            double[] x5 = { 2000, 3000,4000,,5000,5300 };
+            double[] y5 = {19.1,18.5,16.0,14.8,14.3 };
             CenterLineCompoundSeries.Add(2000, new ChartSeries(x5, y5));
 
-            double[] x6 = { 2500, 5600 };
-            double[] y6 = {19.5,14.9 };
+            double[] x6 = { 2500, 3500,4500,5000,5600 };
+            double[] y6 = {19.5,17.9,16.4,15.8,14.9 };
             CenterLineCompoundSeries.Add(2500, new ChartSeries(x6, y6));
 
-            double[] x7 = {3000,6000 };
-            double[] y7 = {19.8,15.5 };
+            double[] x7 = {3000,4000,5000,6000 };
+            double[] y7 = {19.8,18.2,16.8,15.5 };
             CenterLineCompoundSeries.Add(3000, new ChartSeries(x7, y7));
 
-            double[] x8 = {3500,6300 };
+            double[] x8 = {3500,4500,5500,6300 };
             double[] y8 = {20.2,16.0 };
             CenterLineCompoundSeries.Add(3500, new ChartSeries(x8, y8));
 
-            double[] x9 = {4000,6700 };
+            double[] x9 = {4000,5000,6000,6700 };
             double[] y9 = {20.6,16.6 };
             CenterLineCompoundSeries.Add(4000, new ChartSeries(x9, y9));
 
-            double[] x10 = {4500,7000 };
+            double[] x10 = {4500,5500,6500,7000 };
             double[] y10 = {20.8,17.1 };
             CenterLineCompoundSeries.Add(4500, new ChartSeries(x10, y10));
 
-            double[] x11 = {5000,7375 };
+            double[] x11 = {5000,6000,7000,7375 };
             double[] y11 = {21.2,17.5 };
             CenterLineCompoundSeries.Add(5000,new ChartSeries(x11,y11));
 
-            double[] x12 = {5500,7700 };
+            double[] x12 = {5500,6500,7000,7700 };
             double[] y12 = {21.5,18 };
             CenterLineCompoundSeries.Add(5500,new ChartSeries(x12,y12));
 
-            double[] x13 = {6000,8000 };
+            double[] x13 = {6000,7000,8000 };
             double[] y13 = {21.7,18.6 };
             CenterLineCompoundSeries.Add(6000,new ChartSeries(x13,y13));
         }
