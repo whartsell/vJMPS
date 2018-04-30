@@ -129,23 +129,23 @@ namespace vJMPSTests
             InboardCompoundSeries.Add(1000, new ChartSeries(x2, y2));
 
             double[] x3 = { 2000,3000,4000,5000,6000, 6750 };
-            double[] y3 = { 18.2,18.9,19.6,20.2,20.85 21.3 };
+            double[] y3 = { 18.2,18.9,19.6,20.2,20.85, 21.3 };
             InboardCompoundSeries.Add(2000, new ChartSeries(x3, y3));
 
-            double[] x4 = { 3100, 6900 };
-            double[] y4 = { 18.5, 21.0 };
+            double[] x4 = { 3100, 4000,5000,6000,6900 };
+            double[] y4 = { 18.5, 19.2,19.9,20.5,21.0 };
             InboardCompoundSeries.Add(3000, new ChartSeries(x4, y4));
 
-            double[] x5 = { 4100, 7150 };
-            double[] y5 = { 18.8, 20.8 };
+            double[] x5 = { 4100, 5000, 6000, 7150 };
+            double[] y5 = { 18.8, 19.5, 20.1, 20.8 };
             InboardCompoundSeries.Add(4000, new ChartSeries(x5, y5));
 
-            double[] x6 = { 5100, 7250 };
-            double[] y6 = { 19.1, 20.5 };
+            double[] x6 = { 5100, 6000,7250 };
+            double[] y6 = { 19.1, 19.7,20.5 };
             InboardCompoundSeries.Add(5000, new ChartSeries(x6, y6));
 
-            double[] x7 = { 6000, 7400 };
-            double[] y7 = { 19.4, 20.2 };
+            double[] x7 = { 6000, 7000,7400 };
+            double[] y7 = { 19.4, 20.0,20.2 };
             InboardCompoundSeries.Add(6000, new ChartSeries(x7, y7));
         }
 
