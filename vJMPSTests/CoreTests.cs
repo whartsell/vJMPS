@@ -21,7 +21,11 @@ namespace vJMPSTests
             Assert.AreEqual(-1000, test2.SigFigs(1));
         }
 
-        
+        [TestMethod]
+        public void Experimental()
+        {
+
+        }
 
         
         [TestMethod]
@@ -34,13 +38,13 @@ namespace vJMPSTests
             
             var outboard = CGPositionTestData.OutboardSeries.Interpolate(outboardWeight);
             Assert.AreEqual(17.9, outboard.SigFigs(3));
-            var inboard =  CGPositionTestData.InboardCompoundSeries.Interpolate(inboardWeight+outboardWeight, outboardWeight);
+            var inboard =  CGPositionTestData.InboardCompoundSeries.BoundedInterpolate(inboardWeight+outboardWeight, outboardWeight,outboard);
             Assert.AreEqual(19.0, inboard.SigFigs(3));
-            var centerLine = CGPositionTestData.CenterLineCompoundSeries.Interpolate(inboardWeight+outboardWeight+centerWeight, inboardWeight+outboardWeight);
-            Assert.AreEqual(15.3, centerLine.SigFigs(3)); // this one should be looked at
+            var centerLine = CGPositionTestData.CenterLineCompoundSeries.BoundedInterpolate(inboardWeight+outboardWeight+centerWeight,inboardWeight+outboardWeight, inboard);
+            Assert.AreEqual(15.7, centerLine.SigFigs(3)); // this one should be looked at
             var missile = CGPositionTestData.MissileSeries.Interpolate(inboardWeight+outboardWeight+centerWeight);
             Assert.AreEqual(0.598,missile.SigFigs(3));
-            
+            Assert.AreEqual(16.3, (centerLine + missile).SigFigs(3));
         }
     }
 }
