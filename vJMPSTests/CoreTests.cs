@@ -45,6 +45,8 @@ namespace vJMPSTests
             var missile = CGPositionTestData.MissileSeries.Interpolate(inboardWeight+outboardWeight+centerWeight);
             Assert.AreEqual(0.598,missile.SigFigs(3));
             Assert.AreEqual(16.3, (centerLine + missile).SigFigs(3));
+            var gun = CGPositionTestData.AmmoCompoundSeries(inboardWeight+outboardWeight+centerWeight+ammoWeight,inboardWeight+outboardWeight+centerWeight);
+            Assert.AreEqual(0,gun.SigFigs(3));
         }
     }
 }
