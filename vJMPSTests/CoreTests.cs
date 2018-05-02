@@ -38,15 +38,15 @@ namespace vJMPSTests
             
             var outboard = CGPositionTestData.OutboardSeries.Interpolate(outboardWeight);
             Assert.AreEqual(17.9, outboard.SigFigs(3));
-            var inboard =  CGPositionTestData.InboardCompoundSeries.BoundedInterpolate(inboardWeight+outboardWeight, outboardWeight,outboard);
-            Assert.AreEqual(19.0, inboard.SigFigs(3));
-            var centerLine = CGPositionTestData.CenterLineCompoundSeries.BoundedInterpolate(inboardWeight+outboardWeight+centerWeight,inboardWeight+outboardWeight, inboard);
-            Assert.AreEqual(15.7, centerLine.SigFigs(3)); // this one should be looked at
+            var inboard =  CGPositionTestData.InboardCompoundSeries.Interpolate(inboardWeight, outboardWeight);
+            Assert.AreEqual(18.9, inboard.SigFigs(3));
+            var centerLine = CGPositionTestData.CenterLineCompoundSeries.Interpolate(centerWeight,inboardWeight+outboardWeight);
+            Assert.AreEqual(16.3, centerLine.SigFigs(3)); // this one should be looked at
             var missile = CGPositionTestData.MissileSeries.Interpolate(inboardWeight+outboardWeight+centerWeight);
             Assert.AreEqual(0.598,missile.SigFigs(3));
-            Assert.AreEqual(16.3, (centerLine + missile).SigFigs(3));
-            var gun = CGPositionTestData.AmmoCompoundSeries(inboardWeight+outboardWeight+centerWeight+ammoWeight,inboardWeight+outboardWeight+centerWeight);
-            Assert.AreEqual(0,gun.SigFigs(3));
+            var gun = CGPositionTestData.AmmoCompoundSeries.Interpolate(ammoWeight, outboardWeight+inboardWeight+centerWeight+missileWeight);
+            Assert.AreEqual(-3.98,gun.SigFigs(3));
+            Assert.AreEqual(12.9,(centerLine + missile + gun).SigFigs(3));
         }
     }
 }
