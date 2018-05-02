@@ -39,7 +39,7 @@ namespace vJMPSTests
         public void F5_ObstacleClearanceSpeed()
         {
             CompoundChartSeries obstacleClearanceSpeedSeries = SeriesHelpers.CompoundChartSeriesFromResourceJSON("vJMPSTests.dll", "vJMPSTests.data.TakeOffSpeed.json", "ObstacleClearanceSpeed");
-            Assert.AreEqual(183, obstacleClearanceSpeedSeries.Interpolate(18000, 12).SigFigs(3));
+            Assert.AreEqual(184, obstacleClearanceSpeedSeries.Interpolate(18000, 12).SigFigs(3));
         }
         
         [TestMethod]
