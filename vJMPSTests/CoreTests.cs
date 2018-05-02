@@ -24,12 +24,23 @@ namespace vJMPSTests
         [TestMethod]
         public void Experimental()
         {
+            
+            
+        }
+        
+        [TestMethod]
+        public void F5_TakeoffSpeed()
+        {
             CompoundChartSeries takeoffSpeedSeries = SeriesHelpers.CompoundChartSeriesFromResourceJSON("vJMPSTests.dll", "vJMPSTests.data.TakeOffSpeed.json", "TakeoffSpeed");
             Assert.AreEqual(167, takeoffSpeedSeries.Interpolate(18000, 12).SigFigs(3));
+        }
+
+        [TestMethod]
+        public void F5_ObstacleClearanceSpeed()
+        {
             CompoundChartSeries obstacleClearanceSpeedSeries = SeriesHelpers.CompoundChartSeriesFromResourceJSON("vJMPSTests.dll", "vJMPSTests.data.TakeOffSpeed.json", "ObstacleClearanceSpeed");
             Assert.AreEqual(183, obstacleClearanceSpeedSeries.Interpolate(18000, 12).SigFigs(3));
         }
-
         
         [TestMethod]
         public void ChartSeriesTests() {
