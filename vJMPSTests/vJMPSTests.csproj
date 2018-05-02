@@ -77,6 +77,7 @@
     <Compile Include="TestData.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="data\TakeOffSpeed.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -84,6 +85,9 @@
       <Project>{1a8051c2-0f31-42cb-b5c4-51a5c0d1127e}</Project>
       <Name>vJMPS</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

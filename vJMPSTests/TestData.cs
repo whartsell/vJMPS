@@ -35,7 +35,7 @@ namespace vJMPSTests
 				},
 				'35000': {
 					'x': [2, 20, 40, 60, 82],
-					'data': [37, 46, 56, 67, 78]
+					'data': [37, 46, 56, 67, 78]C:\Users\whartsell\Documents\GitHub\vJMPS\vJMPSTests\TestData.cs
 				},
 				'40000': {
 					'x': [2, 20, 40, 60, 82],

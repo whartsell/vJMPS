@@ -24,7 +24,7 @@ namespace vJMPSTests
         [TestMethod]
         public void Experimental()
         {
-
+            SeriesHelpers.ChartSeriesFromResourceJSON("vJMPSTests.dll", "vJMPSTests.data.TakeOffSpeed.json", "pressureAltitudes");
         }
 
         
