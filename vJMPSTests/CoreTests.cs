@@ -31,14 +31,14 @@ namespace vJMPSTests
         [TestMethod]
         public void F5_TakeoffSpeed()
         {
-            CompoundChartSeries takeoffSpeedSeries = SeriesHelpers.CompoundChartSeriesFromResourceJSON("vJMPSTests.dll", "vJMPSTests.data.TakeOffSpeed.json", "TakeoffSpeed");
+            CompoundChartSeries takeoffSpeedSeries = SeriesHelpers.CompoundChartSeriesFromResourceJSON("F5E3.dll", "F5E3.data.TakeOffSpeed.json", "TakeoffSpeed");
             Assert.AreEqual(167, takeoffSpeedSeries.Interpolate(18000, 12).SigFigs(3));
         }
 
         [TestMethod]
         public void F5_ObstacleClearanceSpeed()
         {
-            CompoundChartSeries obstacleClearanceSpeedSeries = SeriesHelpers.CompoundChartSeriesFromResourceJSON("vJMPSTests.dll", "vJMPSTests.data.TakeOffSpeed.json", "ObstacleClearanceSpeed");
+            CompoundChartSeries obstacleClearanceSpeedSeries = SeriesHelpers.CompoundChartSeriesFromResourceJSON("F5E3.dll", "F5E3.data.TakeOffSpeed.json", "ObstacleClearanceSpeed");
             Assert.AreEqual(184, obstacleClearanceSpeedSeries.Interpolate(18000, 12).SigFigs(3));
         }
         

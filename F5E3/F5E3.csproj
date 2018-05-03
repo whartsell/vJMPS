@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="data\TakeOffSpeed.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="data\TakeOffSpeed.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\vJMPS\vJMPS\vJMPS.csproj" />
+  </ItemGroup>
+
+</Project>

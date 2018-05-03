@@ -81,6 +81,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\F5E3\F5E3.csproj">
+      <Project>{6fafee7d-e86a-4b46-8e4a-1da2874935d8}</Project>
+      <Name>F5E3</Name>
+    </ProjectReference>
     <ProjectReference Include="..\vJMPS\vJMPS\vJMPS.csproj">
       <Project>{1a8051c2-0f31-42cb-b5c4-51a5c0d1127e}</Project>
       <Name>vJMPS</Name>
