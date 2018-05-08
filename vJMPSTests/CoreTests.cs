@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using F5E3;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Collections.Generic;
 using vJMPS.Core;
@@ -22,10 +23,16 @@ namespace vJMPSTests
         }
 
         [TestMethod]
-        public void Experimental()
+        public void GrossWeightAndCGPositionChart()
         {
-            
-            
+            var chart = new GrossWeightAndCGPositionChart();
+            chart.OutboardStoresWeight = 1318;
+            chart.InboardStoresWeight = 1306;
+            chart.CenterStoresWeight = 2174;
+            chart.Ammo = 394;
+            chart.HasMissiles = true;
+            Assert.AreEqual(12.9, chart.CG.SigFigs(3));
+            Assert.AreEqual(20584, chart.GrossWeight);
         }
         
         [TestMethod]
