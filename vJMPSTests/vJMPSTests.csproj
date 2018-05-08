@@ -71,13 +71,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CoreTests.cs" />
-    <Compile Include="PerformanceChartMock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CGPositionTestData.cs" />
     <Compile Include="TestData.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="data\TakeOffSpeed.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -92,6 +89,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="data\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

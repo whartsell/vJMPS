@@ -31,35 +31,50 @@ namespace vJMPSTests
         [TestMethod]
         public void F5_TakeoffSpeed()
         {
-            CompoundChartSeries takeoffSpeedSeries = SeriesHelpers.CompoundChartSeriesFromResourceJSON("F5E3.dll", "F5E3.data.TakeOffSpeed.json", "TakeoffSpeed");
-            Assert.AreEqual(167, takeoffSpeedSeries.Interpolate(18000, 12).SigFigs(3));
+            var takeOffSpeed = SeriesHelpers.CompoundChartSeriesFromResourceJSON("F5E3.dll", "F5E3.data.TakeOffSpeed.json", "TakeoffSpeed")
+                .Interpolate(18000, 12);
+            Assert.AreEqual(167, takeOffSpeed.SigFigs(3));
         }
 
         [TestMethod]
         public void F5_ObstacleClearanceSpeed()
         {
-            CompoundChartSeries obstacleClearanceSpeedSeries = SeriesHelpers.CompoundChartSeriesFromResourceJSON("F5E3.dll", "F5E3.data.TakeOffSpeed.json", "ObstacleClearanceSpeed");
-            Assert.AreEqual(184, obstacleClearanceSpeedSeries.Interpolate(18000, 12).SigFigs(3));
+            var obstacleClearanceSpeed = SeriesHelpers.CompoundChartSeriesFromResourceJSON("F5E3.dll", "F5E3.data.TakeOffSpeed.json", "ObstacleClearanceSpeed")
+                .Interpolate(18000, 12);
+            Assert.AreEqual(184, obstacleClearanceSpeed.SigFigs(3));
         }
         
         [TestMethod]
         public void ChartSeriesTests() {
+            var assembly = "F5E3.dll";
+            var resource = "F5E3.data.AircraftGrossWeightAndCGPosition.json";
             double outboardWeight = 1318;
             double inboardWeight = 1306;
             double centerWeight = 2174;
             double ammoWeight = 394;
             double missileWeight = 342;
-            
-            var outboard = CGPositionTestData.OutboardSeries.Interpolate(outboardWeight);
+
+            //var outboard = CGPositionTestData.OutboardSeries.Interpolate(outboardWeight);
+            var outboard = SeriesHelpers.ChartSeriesFromResourceJSON(assembly, resource, "Outboard")
+                .Interpolate(outboardWeight);
             Assert.AreEqual(17.9, outboard.SigFigs(3));
-            var inboard =  CGPositionTestData.InboardCompoundSeries.Interpolate(inboardWeight, outboardWeight);
+
+            var inboard = SeriesHelpers.CompoundChartSeriesFromResourceJSON(assembly, resource, "Inboard")
+                .Interpolate(inboardWeight, outboardWeight);
             Assert.AreEqual(18.9, inboard.SigFigs(3));
-            var centerLine = CGPositionTestData.CenterLineCompoundSeries.Interpolate(centerWeight,inboardWeight+outboardWeight);
+
+            var centerLine = SeriesHelpers.CompoundChartSeriesFromResourceJSON(assembly, resource, "Center")
+                .Interpolate(centerWeight,inboardWeight+outboardWeight);
             Assert.AreEqual(16.3, centerLine.SigFigs(3)); // this one should be looked at
-            var missile = CGPositionTestData.MissileSeries.Interpolate(inboardWeight+outboardWeight+centerWeight);
+
+            var missile = SeriesHelpers.ChartSeriesFromResourceJSON(assembly, resource, "Missile")
+                .Interpolate(inboardWeight+outboardWeight+centerWeight);
             Assert.AreEqual(0.598,missile.SigFigs(3));
-            var gun = CGPositionTestData.AmmoCompoundSeries.Interpolate(ammoWeight, outboardWeight+inboardWeight+centerWeight+missileWeight);
+
+            var gun = SeriesHelpers.CompoundChartSeriesFromResourceJSON(assembly, resource, "Gun")
+                .Interpolate(ammoWeight, outboardWeight+inboardWeight+centerWeight+missileWeight);
             Assert.AreEqual(-3.98,gun.SigFigs(3));
+
             Assert.AreEqual(12.9,(centerLine + missile + gun).SigFigs(3));
         }
     }

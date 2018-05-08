@@ -5,10 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="data\AircraftGrossWeightAndCGPosition.json" />
     <None Remove="data\TakeOffSpeed.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="data\AircraftGrossWeightAndCGPosition.json" />
     <EmbeddedResource Include="data\TakeOffSpeed.json" />
   </ItemGroup>
 

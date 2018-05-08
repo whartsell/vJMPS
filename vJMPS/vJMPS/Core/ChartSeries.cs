@@ -33,6 +33,7 @@ namespace vJMPS.Core
 
         }
 
+ 
 
         private double[] _xRange;
 
