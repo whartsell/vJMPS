@@ -71,7 +71,7 @@ namespace vJMPSTests
                 .Interpolate(inboardWeight+outboardWeight+centerWeight);
             Assert.AreEqual(0.598,missile.SigFigs(3));
 
-            var gun = SeriesHelpers.CompoundChartSeriesFromResourceJSON(assembly, resource, "Gun")
+            var gun = SeriesHelpers.CompoundChartSeriesFromResourceJSON(assembly, resource, "Ammo")
                 .Interpolate(ammoWeight, outboardWeight+inboardWeight+centerWeight+missileWeight);
             Assert.AreEqual(-3.98,gun.SigFigs(3));
 
