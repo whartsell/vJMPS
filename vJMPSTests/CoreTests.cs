@@ -25,31 +25,33 @@ namespace vJMPSTests
         [TestMethod]
         public void GrossWeightAndCGPositionChart()
         {
-            var chart = new GrossWeightAndCGPositionChart();
-            chart.OutboardStoresWeight = 1318;
-            chart.InboardStoresWeight = 1306;
-            chart.CenterStoresWeight = 2174;
-            chart.Ammo = 394;
-            chart.HasMissiles = true;
+            var chart = new GrossWeightAndCGPositionChart
+            {
+                OutboardStoresWeight = 1318,
+                InboardStoresWeight = 1306,
+                CenterStoresWeight = 2174,
+                Ammo = 394,
+                HasMissiles = true
+            };
             Assert.AreEqual(12.9, chart.CG.SigFigs(3));
             Assert.AreEqual(20584, chart.GrossWeight);
         }
         
         [TestMethod]
-        public void F5_TakeoffSpeed()
+        public void F5_TakeoffAndObstacleClearanceSpeedChart()
         {
-            var takeOffSpeed = SeriesHelpers.CompoundChartSeriesFromResourceJSON("F5E3.dll", "F5E3.data.TakeOffSpeed.json", "TakeoffSpeed")
-                .Interpolate(18000, 12);
-            Assert.AreEqual(167, takeOffSpeed.SigFigs(3));
+            //todo add test case for centerline over 1k and no wing stores
+            var chart = new TakeOffAndObsticalClearanceSpeedChart(new GrossWeightAndCGPositionChart())
+            {
+                TakeoffGrossWeight = 18000,
+                CG = 12
+            };
+
+            Assert.AreEqual(167, chart.TakeoffSpeed.SigFigs(3));
+            Assert.AreEqual(157, chart.AftStickSpeed.SigFigs(3));
+            Assert.AreEqual(184, chart.ObstacleClearanceSpeed.SigFigs(3));
         }
 
-        [TestMethod]
-        public void F5_ObstacleClearanceSpeed()
-        {
-            var obstacleClearanceSpeed = SeriesHelpers.CompoundChartSeriesFromResourceJSON("F5E3.dll", "F5E3.data.TakeOffSpeed.json", "ObstacleClearanceSpeed")
-                .Interpolate(18000, 12);
-            Assert.AreEqual(184, obstacleClearanceSpeed.SigFigs(3));
-        }
         
         [TestMethod]
         public void ChartSeriesTests() {

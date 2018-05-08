@@ -10,8 +10,7 @@ namespace F5E3
     {
         private CompoundChartSeries inboardSeries, centerSeries, ammoSeries;
         private ChartSeries outboardSeries, missileSeries;
-        private static double missileWeight = 342;
-        private static double aircraftEmptyWeight = 15050;
+      
         
         public GrossWeightAndCGPositionChart()
         {
@@ -27,6 +26,7 @@ namespace F5E3
             _centerStoresWeight = 0;
             _ammo = 0;
             _hasMissiles = false;
+            Calculate();
         }
 
         private double _inboardStoresWeight;
@@ -117,12 +117,12 @@ namespace F5E3
             if (_hasMissiles)
             {
                 interimCG = interimCG + missileSeries.Interpolate(interimWeight);
-                interimWeight = interimWeight + missileWeight;
+                interimWeight = interimWeight + F5MissionPlanner.DefaultMissileWeight;
             }
             interimCG = interimCG + ammoSeries.Interpolate(_ammo, interimWeight);
             interimWeight = interimWeight + _ammo;
             _cg = interimCG;
-            _grossWeight = aircraftEmptyWeight + interimWeight;
+            _grossWeight = F5MissionPlanner.DefaultEmptyWeight + interimWeight;
         }
 
     }
