@@ -13,7 +13,7 @@ namespace vJMPS
 		{
 			InitializeComponent();
 
-			MainPage = new vJMPS.MainPage();
+			MainPage = new SetupPage();
 		}
 
 		protected override void OnStart ()

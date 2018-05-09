@@ -1,0 +1,69 @@
+Aft Stick/Takeoff Speed Obstacle Clearance Speed
+	TakeOff Weight
+	CG Position
+
+Tire Limit
+	Runway Temp
+	Pressure Altitude
+	Headwind Component +-
+
+TakeOff Factor
+	Runway Temp
+	Pressure Altitude
+	Thrust: calculate all?  Max is required elsewhere
+		Max
+		Min AB
+		Mil
+	Anti-Ice:
+		on
+		Off
+
+TakeOff Ground Run
+	Takeoff Factor
+	TakeOff Gross Weight
+	CG
+	Headwind Component	
+	Runway Slope
+
+Total Obstacle Clearance Distance
+	Ground Run
+	Headwind Component
+	CG Position
+
+Min Safe Single Engine Takeoff Speed
+	Max Thrust Takeoff Factor
+	Runway Pressure Altitude
+	Takeoff Gross Weight
+	CG
+
+Single Engine Climb Gradient? do i need this
+
+Critical Field Length
+	Max thrust Takeoff Factor
+	Chute abort:
+		true
+		false
+	Takeoff Gross weight
+	Headwind component
+	CG
+	RCR
+	Runway Slope
+	
+Critical Engine Failure or Refusal Speed
+	Takeoff Factor
+	Takeoff Gross Weight
+	Runway Length
+	RCR
+	Critical Field Length
+	Headwind Component
+	Slope
+
+Decision Speed
+	Takeoff Factor
+	Gross Weight
+	CG
+	Runway Length
+	Headwind Component
+	
+Velocity during takeoff Ground run?
+

@@ -1,0 +1,33 @@
+Takeoff Weight - Basic (weight + ordinance) - taxi fuel burn
+CG (calculated with basic weight+ inboard,outboard,center ordinance)
+Runway Temp weather
+Pressure Altitude weather
+Headwind Component weather
+Anti Ice: bool option selected
+Takeoff Factor* (we are always going to use max)
+runway slope runway data
+Takeoff Ground Run*
+Chute abort: bool
+RCR	weather
+Runway Length runway data
+Critical Field Length*
+
+
+Step 1 - Select aircraft
+Step 2 - Select Airport
+			provides runway heading (for calculating headwind component)
+			provides altitude for calculating pressure altitude
+			provides runway length
+			provides runway slope
+Step 3 - Weather (select or enter?) Menu item ...default to std day
+			provides data for calculating pressure altitude
+			provides data for calculating headwind component
+Step 4 - Weight and Balance
+			configure stores weight and drag index
+			calculate CG
+Step 5 - Takeoff
+			select anti-ice option
+			calculates all sorts of goodies
+			
+			
+			
