@@ -22,6 +22,7 @@ namespace vJMPSTests
             Assert.AreEqual(-1000, test2.SigFigs(1));
         }
 
+
         [TestMethod]
         public void GrossWeightAndCGPositionChart()
         {
@@ -52,6 +53,19 @@ namespace vJMPSTests
             Assert.AreEqual(184, chart.ObstacleClearanceSpeed.SigFigs(3));
         }
 
+        [TestMethod]
+        public void F5_TimeFuelAndDistance()
+        {
+            var chart = new TimeFuelDistanceClimb
+            {
+                TakeoffFactor = 11.6,
+                TakeoffGrossWeight = 20290,
+                DragIndex = 120
+            };
+            Assert.AreEqual(new System.TimeSpan(0, 1, 10),chart.Time);
+            Assert.AreEqual(310,chart.Fuel.SigFigs(2));
+            Assert.AreEqual(3.1,chart.Distance.SigFigs(2));
+        }
         
         [TestMethod]
         public void ChartSeriesTests() {
@@ -86,5 +100,15 @@ namespace vJMPSTests
 
             Assert.AreEqual(12.9,(centerLine + missile + gun).SigFigs(3));
         }
+        [TestMethod]
+        public void wtf()
+        {
+            var test = new ChartSeries();
+            double[] x = { 0, 5, 10, 15, 20, 25, 30, 35, 40};
+            double[] y = { 42, 51, 63, 78, 90, 108, 126, 144, 162};
+            test.XRange = x;
+            test.YRange = y;
+            Assert.AreEqual(51, test.Interpolate(5));
+    }
     }
 }
