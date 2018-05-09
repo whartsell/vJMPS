@@ -101,14 +101,16 @@ namespace vJMPSTests
             Assert.AreEqual(12.9,(centerLine + missile + gun).SigFigs(3));
         }
         [TestMethod]
-        public void wtf()
+        public void TakeoffFactor()
         {
-            var test = new ChartSeries();
-            double[] x = { 0, 5, 10, 15, 20, 25, 30, 35, 40};
-            double[] y = { 42, 51, 63, 78, 90, 108, 126, 144, 162};
-            test.XRange = x;
-            test.YRange = y;
-            Assert.AreEqual(51, test.Interpolate(5));
+            var chart = new TakeoffFactorChart
+            {
+                AntiIceOn = false,
+                PressureAlt = 0,
+                RunwayTemp = 15
+            };
+
+            Assert.AreEqual(12.0, chart.TakeoffFactor.SigFigs(3));
     }
     }
 }

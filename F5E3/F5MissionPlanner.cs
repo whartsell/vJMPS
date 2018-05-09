@@ -11,6 +11,8 @@ namespace F5E3
         public static readonly double DefaultTakeoffFactor = 12;
         public static readonly bool DefaultClimbProfile = false;
         public static readonly double DefaultDragIndex = 0;
+        public static readonly double DefaultPA = 0;
+        public static readonly double DefaultTemp = 15;
 
         public Airport Departure { get; set; }
         public Airport Recovery { get; set; }

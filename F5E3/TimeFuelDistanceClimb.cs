@@ -53,6 +53,11 @@ namespace F5E3
             get { return _takeoffFactor; }
             set
             {
+                // chart states if factor is > 12 to use 12
+                if (value >12)
+                {
+                    value = 12;
+                }
                 _takeoffFactor = value;
                 Calculate();
             }

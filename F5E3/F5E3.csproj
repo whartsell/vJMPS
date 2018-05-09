@@ -6,12 +6,14 @@
 
   <ItemGroup>
     <None Remove="data\AircraftGrossWeightAndCGPosition.json" />
+    <None Remove="data\TakeoffFactor.json" />
     <None Remove="data\TakeOffSpeed.json" />
     <None Remove="data\TimeFuelDistanceClimbMil.json" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="data\AircraftGrossWeightAndCGPosition.json" />
+    <EmbeddedResource Include="data\TakeoffFactor.json" />
     <EmbeddedResource Include="data\TakeOffSpeed.json" />
     <EmbeddedResource Include="data\TimeFuelDistanceClimbMil.json" />
   </ItemGroup>
