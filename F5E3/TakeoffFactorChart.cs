@@ -56,7 +56,7 @@ namespace F5E3
             string resource = "F5E3.data.TakeoffFactor.json";
             runwayTemperatureSeries = SeriesHelpers.CompoundChartSeriesFromResourceJSON(assembly, resource, "RunwayTemperature");
             maxThrust = SeriesHelpers.ChartSeriesFromResourceJSON(assembly, resource, "MaxThrust");
-            maxThrustAI = SeriesHelpers.ChartSeriesFromResourceJSON(assembly, resource, "MaxThrustAI");
+            maxThrustAI = SeriesHelpers.ChartSeriesFromResourceJSON(assembly, resource, "MaxThrustAntiIce");
             _antiIceOn = false;
             _pressureAlt = F5MissionPlanner.DefaultPA;
             _runwayTemp = F5MissionPlanner.DefaultTemp;

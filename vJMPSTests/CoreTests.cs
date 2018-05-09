@@ -110,7 +110,7 @@ namespace vJMPSTests
                 RunwayTemp = 15
             };
 
-            Assert.AreEqual(12.0, chart.TakeoffFactor.SigFigs(3));
+            Assert.AreEqual(11.9, chart.TakeoffFactor.SigFigs(3));
     }
     }
 }
