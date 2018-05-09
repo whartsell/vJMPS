@@ -12,9 +12,6 @@ namespace vJMPS
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SetupPage : ContentPage
     {
-
-        public MissionSetup Setup { get; set; }
-        //MissionSetup setup;
        
         public SetupPage()
         {
@@ -22,8 +19,7 @@ namespace vJMPS
             
 
             InitializeComponent();
-            //BindingContext = new MissionSetup();
-            Setup = new MissionSetup();
+            BindingContext = new MissionSetup();
 
         }
 

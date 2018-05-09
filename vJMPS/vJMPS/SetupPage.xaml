@@ -2,10 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="vJMPS.SetupPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Picker Title="Select Airport" ItemsSource="{Binding Setup.AirPorts}"
-                    ItemDisplayBinding="{Binding Name}"/>
-        </StackLayout>
-    </ContentPage.Content>
+    <StackLayout>
+        <Picker Title="Select Aircraft" ItemsSource="{Binding Aircraft}" />
+    </StackLayout>
 </ContentPage>

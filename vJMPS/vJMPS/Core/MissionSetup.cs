@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace vJMPS.Core
 {
-    public class MissionSetup
+    public class MissionSetup : ViewModelBase
     {
         public IList<string> Aircraft { get; set; }
         public IList<Airport> Airports { get; set; }
