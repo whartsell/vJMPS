@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using vJMPS.Pages;
 using Xamarin.Forms;
 
 namespace vJMPS
@@ -13,7 +13,7 @@ namespace vJMPS
 		{
 			InitializeComponent();
 
-			MainPage = new SetupPage();
+			MainPage = new RootPage();
 		}
 
 		protected override void OnStart ()

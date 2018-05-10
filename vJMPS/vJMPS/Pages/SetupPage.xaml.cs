@@ -7,7 +7,7 @@ using vJMPS.Core;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace vJMPS
+namespace vJMPS.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SetupPage : ContentPage

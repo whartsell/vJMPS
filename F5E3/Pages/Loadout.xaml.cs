@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace vJMPS
+namespace F5E3.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class MasterPage : ContentPage
+	public partial class Loadout : ContentPage
 	{
-		public MasterPage ()
+		public Loadout ()
 		{
-			//InitializeComponent ();
+			InitializeComponent ();
 		}
 	}
 }
