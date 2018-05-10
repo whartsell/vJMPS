@@ -4,15 +4,32 @@
              x:Class="F5E3.Pages.Loadout">
     <ContentPage.Content>
         <StackLayout>
-            <Entry HorizontalOptions="CenterAndExpand"
-                   Text="{Binding CenterLineWeight}"
-                   />
-            <Label Text="CG"
-                HorizontalOptions="CenterAndExpand" />
-            <Label Text="{Binding CG}"
-                   HorizontalOptions="CenterAndExpand"/>
-
-
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Outboard Stores Weight"/>
+                <Entry Text="{Binding OutboardStoresWeight}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Inboard Stores Weight"/>
+                <Entry Text="{Binding InboardStoresWeight}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Centerline Stores Weight"/>
+                <Entry Text="{Binding CenterLineWeight}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Wingtip Missiles?"/>
+                <Switch IsToggled="{Binding HasMissiles}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Canon Amunition Weight"/>
+                <Entry Text="{Binding Ammo}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Center of Gravity:"/>
+                <Label Text="{Binding CG}"/>
+                <Label Text="Gross Weight:"/>
+                <Label Text="{Binding GrossWeight}"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

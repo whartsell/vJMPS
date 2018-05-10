@@ -1,27 +1,95 @@
-﻿using System;
+﻿using F5E3.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using vJMPS.Core;
 
 namespace F5E3.ViewModels
 {
-    public class LoadoutViewModel
+    public class LoadoutViewModel : ViewModelBase
     {
-        private readonly GrossWeightAndCGPositionChart cGPositionChart;
+        private LoadoutModel loadoutModel;
 
-       public LoadoutViewModel()
+        public LoadoutViewModel()
         {
-            cGPositionChart = new GrossWeightAndCGPositionChart();
+            loadoutModel = new LoadoutModel();
+            CalcAndNotify();
         }
-
         public double CenterLineWeight
         {
-            get { return cGPositionChart.CenterStoresWeight; }
-            set { cGPositionChart.CenterStoresWeight = value; }
+            get { return loadoutModel.CenterStoresWeight; }
+            set
+            {
+                loadoutModel.CenterStoresWeight = value;
+                CalcAndNotify();
+
+            }
         }
+
+        public double OutboardStoresWeight
+        {
+            get { return loadoutModel.OutbaordStoresWeight; }
+            set
+            {
+                loadoutModel.OutbaordStoresWeight = value;
+                CalcAndNotify();
+            }
+        }
+
+        public double InboardStoresWeight
+        {
+            get { return loadoutModel.InboardStoresWeight; }
+            set
+            {
+                loadoutModel.InboardStoresWeight = value;
+                CalcAndNotify();
+            }
+        }
+
+        public bool HasMissiles
+        {
+            get { return loadoutModel.HasMissiles; }
+            set
+            {
+                loadoutModel.HasMissiles = value;
+                CalcAndNotify();
+            }
+        }
+
+        public double Ammo
+        {
+            get { return loadoutModel.Ammo; }
+            set
+            {
+                loadoutModel.Ammo = value;
+                CalcAndNotify();
+            }
+        }
+
 
         public double CG
         {
-            get { return cGPositionChart.CG; }
+            get { return loadoutModel.CG.SigFigs(3); }
+        }
+
+        public double GrossWeight
+        {
+            get { return loadoutModel.GrossWeight; }
+            set
+            {
+                loadoutModel.GrossWeight = value;
+                CalcAndNotify();
+            }
+        }
+
+        private void CalcAndNotify()
+        {
+            loadoutModel.CalculateGWandCG();
+            OnPropertyChanged("CG");
+            OnPropertyChanged("GrossWeight");
         }
     }
+
+
+
 }
