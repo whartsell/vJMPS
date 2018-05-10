@@ -4,9 +4,15 @@
              x:Class="F5E3.Pages.Loadout">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
+            <Entry HorizontalOptions="CenterAndExpand"
+                   Text="{Binding CenterLineWeight}"
+                   />
+            <Label Text="CG"
                 HorizontalOptions="CenterAndExpand" />
+            <Label Text="{Binding CG}"
+                   HorizontalOptions="CenterAndExpand"/>
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
