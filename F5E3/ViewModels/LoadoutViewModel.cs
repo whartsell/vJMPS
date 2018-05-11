@@ -1,18 +1,15 @@
 ﻿using F5E3.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using vJMPS.Core;
 
 namespace F5E3.ViewModels
 {
     public class LoadoutViewModel : ViewModelBase
     {
-        private LoadoutModel loadoutModel;
+        private WandBModel loadoutModel;
 
         public LoadoutViewModel()
         {
-            loadoutModel = new LoadoutModel();
+            loadoutModel = new WandBModel();
             CalcAndNotify();
         }
         public double CenterLineWeight
@@ -28,10 +25,10 @@ namespace F5E3.ViewModels
 
         public double OutboardStoresWeight
         {
-            get { return loadoutModel.OutbaordStoresWeight; }
+            get { return loadoutModel.OutboardStoresWeight; }
             set
             {
-                loadoutModel.OutbaordStoresWeight = value;
+                loadoutModel.OutboardStoresWeight = value;
                 CalcAndNotify();
             }
         }

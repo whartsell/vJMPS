@@ -6,6 +6,7 @@ using Moq;
 using System.Collections.Generic;
 using vJMPS.Core;
 
+
 namespace vJMPSTests
 {
     [TestClass]
@@ -46,15 +47,23 @@ namespace vJMPSTests
         public void F5_TakeoffAndObstacleClearanceSpeedChart()
         {
             //todo add test case for centerline over 1k and no wing stores
-        //    var chart = TOandOCSpeedChart
-        //    {
-        //        TakeoffGrossWeight = 18000,
-        //        CG = 12
-        //    };
+            var wnb = new WandBModel
+            {
+                OutboardStoresWeight = 1318,
+                InboardStoresWeight = 1306,
+                CenterStoresWeight = 2174,
+                Ammo = 394,
+                HasMissiles = true
+            };
+            wnb.CalculateGWandCG();
+            var to = new TakeoffModel(wnb);
 
-        //    Assert.AreEqual(167, chart.TakeoffSpeed.SigFigs(3));
-        //    Assert.AreEqual(157, chart.AftStickSpeed.SigFigs(3));
-        //    Assert.AreEqual(184, chart.ObstacleClearanceSpeed.SigFigs(3));
+            var chart = new TakeoffViewModel(to);
+           
+
+            Assert.AreEqual(177, chart.TakeoffSpeed.SigFigs(3));
+            Assert.AreEqual(167, chart.AftStickSpeed.SigFigs(3));
+            Assert.AreEqual(194, chart.ObstacleClearanceSpeed.SigFigs(3));
         }
 
         [TestMethod]

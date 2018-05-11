@@ -2,10 +2,10 @@
 
 namespace F5E3.Models
 {
-    public class LoadoutModel : ViewModelBase
+    public class WandBModel : ViewModelBase
     {
         private double _outboardStoresWeght;
-        public double OutbaordStoresWeight
+        public double OutboardStoresWeight
         {
             get { return _outboardStoresWeght; }
             set

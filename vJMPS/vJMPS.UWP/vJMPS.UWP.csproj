@@ -155,6 +155,10 @@
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.0.1" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\F5E3\F5E3.csproj">
+      <Project>{6fafee7d-e86a-4b46-8e4a-1da2874935d8}</Project>
+      <Name>F5E3</Name>
+    </ProjectReference>
     <ProjectReference Include="..\vJMPS\vJMPS.csproj">
       <Project>{5F4FF004-23A1-4FD2-ABE6-44E7B4FE6607}</Project>
       <Name>vJMPS</Name>

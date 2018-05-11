@@ -30,9 +30,9 @@ namespace F5E3
 
 
 
-        public static void CalculateGWandCG(this LoadoutModel loadout)
+        public static void CalculateGWandCG(this WandBModel loadout)
         {
-            var _outboardStoresWeight = loadout.OutbaordStoresWeight;
+            var _outboardStoresWeight = loadout.OutboardStoresWeight;
             var _inboardStoresWeight = loadout.InboardStoresWeight;
             var _centerStoresWeight = loadout.CenterStoresWeight;
             var _hasMissiles = loadout.HasMissiles;

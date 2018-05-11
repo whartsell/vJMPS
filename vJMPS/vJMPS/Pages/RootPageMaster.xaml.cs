@@ -37,7 +37,7 @@ namespace vJMPS.Pages
                 var a = Assembly.Load(AssemblyName.GetAssemblyName("F5E3.dll"));
                 foreach (Type t in a.GetTypes())
                 {
-                    if (typeof(ILoadout).IsAssignableFrom(t) )
+                    if (typeof(ILoadout).IsAssignableFrom(t))
                     {
                         Debug.WriteLine("i found it");
                         Console.WriteLine("i found it");
@@ -47,13 +47,17 @@ namespace vJMPS.Pages
                 MenuItems = new ObservableCollection<RootPageMenuItem>(new[]
                 {
                     new RootPageMenuItem { Id = 0, Title = "Setup", TargetType = typeof(SetupPage) },
-                    new RootPageMenuItem { Id = 1, Title = "Loadout" , TargetType = test},
-                    new RootPageMenuItem { Id = 2, Title = "Page 3" },
-                    new RootPageMenuItem { Id = 3, Title = "Page 4" },
-                    new RootPageMenuItem { Id = 4, Title = "Page 5" },
+                    new RootPageMenuItem { Id = 1, Title = "Weight and Balance" , TargetType = test},
+                    new RootPageMenuItem { Id = 2, Title = "Takeoff" },
+                    new RootPageMenuItem { Id = 3, Title = "Ingress" },
+                    new RootPageMenuItem { Id = 4, Title = "Combat" },
+                    new RootPageMenuItem { Id = 5, Title = "Egress"},
+                    new RootPageMenuItem { Id = 6, Title = "Landing"},
+                    new RootPageMenuItem {Id = 7, Title = "Diversion"},
+                    new RootPageMenuItem {Id = 8, Title = "Mission Card"}
                 });
             }
-            
+
             #region INotifyPropertyChanged Implementation
             public event PropertyChangedEventHandler PropertyChanged;
             void OnPropertyChanged([CallerMemberName] string propertyName = "")
