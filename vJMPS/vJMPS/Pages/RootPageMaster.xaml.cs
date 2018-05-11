@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using vJMPS.Core;
 using vJMPS.Core.Interfaces;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -44,6 +45,20 @@ namespace vJMPS.Pages
                         test = t;
                     }
                 }
+
+                Assembly[] assems = AppDomain.CurrentDomain.GetAssemblies();
+                Debug.WriteLine("hold on to your butts!");
+                foreach (Assembly item in assems)
+                {
+                    foreach (Type t in item.GetTypes())
+                    {
+                        if (t.IsTypeOf<ILoadout>())
+                        {
+                            
+                            Debug.WriteLine(item.GetName().Name);
+                        }
+                    }
+                }
                 MenuItems = new ObservableCollection<RootPageMenuItem>(new[]
                 {
                     new RootPageMenuItem { Id = 0, Title = "Setup", TargetType = typeof(SetupPage) },
@@ -68,6 +83,7 @@ namespace vJMPS.Pages
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
             }
             #endregion
+            
         }
     }
 }

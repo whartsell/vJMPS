@@ -19,5 +19,11 @@ namespace vJMPS.Core
             long shifted = (long)Math.Round(value * magnitude);
             return shifted / magnitude;
         }
+
+        public static bool IsTypeOf<T>(this Type type)
+        {
+            //bool isInterface = type.IsInterface;
+            return typeof(T).IsAssignableFrom(type) && !type.IsInterface;
+        }
     }
 }
