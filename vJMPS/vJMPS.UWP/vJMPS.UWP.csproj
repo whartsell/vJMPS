@@ -148,6 +148,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Autofac">
+      <Version>4.8.1</Version>
+    </PackageReference>
     <PackageReference Include="MathNet.Numerics">
       <Version>4.4.1</Version>
     </PackageReference>
