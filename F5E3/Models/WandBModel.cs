@@ -1,5 +1,4 @@
-﻿using vJMPS.Core;
-
+﻿using vJMPS.ViewModels;
 namespace F5E3.Models
 {
     public class WandBModel : ViewModelBase

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Autofac;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,11 +10,11 @@ namespace vJMPS
 {
 	public partial class App : Application
 	{
-		public App ()
+		public App (IOCSetup setup)
 		{
 			InitializeComponent();
-
-			MainPage = new RootPage();
+            AppContainer.Container = setup.CreateContainer();
+            MainPage = AppContainer.Container.Resolve<RootPage>();
 		}
 
 		protected override void OnStart ()

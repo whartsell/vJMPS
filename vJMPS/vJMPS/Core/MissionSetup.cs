@@ -1,26 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xamarin.Forms;
+﻿using System.Collections.Generic;
+using System.Reflection;
+using vJMPS.ViewModels;
 
 namespace vJMPS.Core
 {
     public class MissionSetup : ViewModelBase
     {
-        public IList<string> Aircraft { get; set; }
+        public IDictionary<string,Assembly> Aircraft { get; set; }
         public IList<Airport> Airports { get; set; }
 
         public MissionSetup()
         {
-            Aircraft = new List<string>();
+            Aircraft = new Dictionary<string,Assembly>();
             Airports = new List<Airport>();
             stubData();
         }
 
         private void stubData()
         {
-            Aircraft.Add("F-5E3");
-            Aircraft.Add("AV-8b");
+            Aircraft.Add("F-5E3" , Assembly.GetExecutingAssembly());
+            Aircraft.Add("AV-8b",Assembly.GetExecutingAssembly());
             var ap1 = new Airport
             {
                 Name = "Test1",

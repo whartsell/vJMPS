@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using vJMPS.Core;
+﻿using vJMPS.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,16 +8,20 @@ namespace vJMPS.Pages
     public partial class SetupPage : ContentPage
     {
        
-        public SetupPage()
+        public SetupPage(SetupViewModel viewModel)
         {
            
             
 
             InitializeComponent();
-            BindingContext = new MissionSetup();
+            BindingContext = viewModel;
+            AircraftPicker.SelectedIndexChanged += viewModel.AircraftPicker_SelectedIndexChanged;
 
         }
 
+       
+
+        
 
         
     }

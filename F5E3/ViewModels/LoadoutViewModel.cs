@@ -1,5 +1,6 @@
 ﻿using F5E3.Models;
 using vJMPS.Core;
+using vJMPS.ViewModels;
 
 namespace F5E3.ViewModels
 {

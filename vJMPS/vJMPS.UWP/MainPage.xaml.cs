@@ -21,7 +21,7 @@ namespace vJMPS.UWP
         {
             this.InitializeComponent();
 
-            LoadApplication(new vJMPS.App());
+            LoadApplication(new vJMPS.App(new IOCSetup()));
         }
     }
 }

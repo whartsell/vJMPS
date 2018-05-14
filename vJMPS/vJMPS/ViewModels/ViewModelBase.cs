@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace vJMPS.Core
+namespace vJMPS.ViewModels
 {
 
     public class ViewModelBase : INotifyPropertyChanged

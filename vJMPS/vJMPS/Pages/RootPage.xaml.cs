@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using Autofac;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,9 +7,12 @@ namespace vJMPS.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RootPage : MasterDetailPage
     {
-        public RootPage()
+        private RootPageMaster MasterPage;
+        public RootPage(RootPageMaster masterPage)
         {
             InitializeComponent();
+            MasterPage = masterPage;
+            Master = MasterPage;
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
         }
 
@@ -24,7 +22,17 @@ namespace vJMPS.Pages
             if (item == null)
                 return;
 
-            var page = (Page)Activator.CreateInstance(item.TargetType);
+            //var page = (Page)Activator.CreateInstance(item.TargetType);
+            Page page;
+            if (item.Id==0)
+            {
+                page = (Page)AppContainer.Container.Resolve(item.TargetType);
+            }
+            else
+            {
+                page = (Page)AppContainer.Airframe.Resolve(item.TargetType);
+            }
+            
             page.Title = item.Title;
 
             Detail = new NavigationPage(page);
