@@ -16,8 +16,30 @@ namespace vJMPS.ViewModels
         public SetupViewModel(SetupModel _model)
         {
             model = _model;
+            Debug.WriteLine("SetupViewModel Setup");
+            selectedAirframe = "Nothing Yet";
 
         }
+
+        private string selectedAirframe;
+
+        public string SelectedAirframe
+        {
+            get { return selectedAirframe; }
+            set
+            {
+                selectedAirframe = value;
+                Debug.WriteLine("ok it is getting this");
+                if (model.Airframes.TryGetValue(value,out Assembly item))
+                {
+                    Debug.WriteLine("if check worked");
+                    AppContainer.LoadAirframe(item);
+                    Debug.WriteLine("AirframeLoaded");
+                }
+                OnPropertyChanged("SelectedAirframe");
+            }
+        }
+
 
         public void AircraftPicker_SelectedIndexChanged(object sender, EventArgs e)
         {

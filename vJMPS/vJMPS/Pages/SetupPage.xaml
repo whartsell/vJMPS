@@ -3,6 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="vJMPS.Pages.SetupPage">
     <StackLayout>
-        <Picker x:Name="AircraftPicker" Title="Select Aircraft" ItemsSource="{Binding Aircraft}" />
+        <Picker x:Name="AircraftPicker" Title="Select Your Aircraft Biach" ItemsSource="{Binding Aircraft}" SelectedItem="{Binding SelectedAirframe}"/>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="SelectedAirframe"/>
+            <Label Text="{Binding SelectedAirframe}" />
+        </StackLayout>
+
+
     </StackLayout>
 </ContentPage>

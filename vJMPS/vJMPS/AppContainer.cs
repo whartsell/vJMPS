@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using System.Diagnostics;
 using System.Reflection;
 
 namespace vJMPS
@@ -12,11 +13,19 @@ namespace vJMPS
 
         public static void LoadAirframe(Assembly assem)
         {
-            Airframe.Dispose();
+            Debug.WriteLine("in load Airframe");
+            if (Airframe !=null)
+            {
+                Debug.WriteLine("Disposing");
+                Airframe.Dispose();
+                Debug.WriteLine("Disposed Airframe");
+            }
+            Debug.WriteLine("building airframe");
             Airframe = Container.BeginLifetimeScope(builder =>
             {
                 builder.RegisterAssemblyModules(assem);
             });
+            Debug.WriteLine("Done building");
         }
     }
 

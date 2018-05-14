@@ -15,7 +15,7 @@ namespace vJMPS.ViewModels
                     new RootPageMenuItem { Id = 0, Title = "Setup", TargetType = typeof(SetupPage) },
                     //new RootPageMenuItem { Id = 1, Title = "Weight and Balance" , TargetType = test},
                     new RootPageMenuItem { Id = 2, Title = "Takeoff" },
-                    new RootPageMenuItem { Id = 3, Title = "Ingress" },
+                    new RootPageMenuItem { Id = 3, Title = "Ingress", TargetType = typeof(RootPageDetail) },
                     new RootPageMenuItem { Id = 4, Title = "Combat" },
                     new RootPageMenuItem { Id = 5, Title = "Egress"},
                     new RootPageMenuItem { Id = 6, Title = "Landing"},

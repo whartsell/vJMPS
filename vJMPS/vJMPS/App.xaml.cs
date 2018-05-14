@@ -15,6 +15,7 @@ namespace vJMPS
 			InitializeComponent();
             AppContainer.Container = setup.CreateContainer();
             MainPage = AppContainer.Container.Resolve<RootPage>();
+
 		}
 
 		protected override void OnStart ()
