@@ -17,7 +17,7 @@ namespace F5E3
         {
             builder.RegisterType<TakeoffModel>().SingleInstance();
             builder.RegisterType<WandBModel>().SingleInstance();
-            builder.RegisterType<LoadoutViewModel>().SingleInstance();
+            builder.RegisterType<WandBViewModel>().SingleInstance();
             builder.RegisterType<TakeoffViewModel>().SingleInstance();
             builder.RegisterType<Takeoff>();
             builder.RegisterType<WeightAndBalance>();

@@ -11,7 +11,7 @@ namespace F5E3.Pages
 		public WeightAndBalance ()
 		{
 			InitializeComponent ();
-            BindingContext = new LoadoutViewModel();
+            BindingContext = new WandBViewModel();
 		}
 	}
 }

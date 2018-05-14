@@ -4,11 +4,11 @@ using vJMPS.ViewModels;
 
 namespace F5E3.ViewModels
 {
-    public class LoadoutViewModel : ViewModelBase
+    public class WandBViewModel : ViewModelBase
     {
         private WandBModel loadoutModel;
 
-        public LoadoutViewModel()
+        public WandBViewModel()
         {
             loadoutModel = new WandBModel();
             CalcAndNotify();

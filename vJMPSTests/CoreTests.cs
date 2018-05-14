@@ -30,7 +30,7 @@ namespace vJMPSTests
         public void GrossWeightAndCGPositionChart()
         {
 
-            var chart = new LoadoutViewModel
+            var chart = new WandBViewModel
             {
                 OutboardStoresWeight = 1318,
                 InboardStoresWeight = 1306,
