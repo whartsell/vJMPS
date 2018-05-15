@@ -5,9 +5,23 @@
     <ContentPage.Content>
         <StackLayout>
             <StackLayout Orientation="Horizontal">
+                <Label Text="Taxi Time (min):"/>
+                <Entry Text="{Binding TaxiTime}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Takeoff Speed:"/>
+                <Label Text="{Binding TakeoffSpeed}"/>
+                <Label Text="Obstacle Clearance Speed:"/>
+                <Label Text="{Binding ObstacleClearanceSpeed}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Aft Stick Speed:"/>
+                <Label Text="{Binding AftStickSpeed}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
                 <Label Text="Center of Gravity:"/>
                 <Label Text="{Binding CG}"/>
-                <Label Text="Gross Weight:"/>
+                <Label Text="Takeoff Weight:"/>
                 <Label Text="{Binding TakeoffWeight}"/>
             </StackLayout>
         </StackLayout>

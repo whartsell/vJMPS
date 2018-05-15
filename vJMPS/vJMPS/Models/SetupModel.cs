@@ -31,13 +31,13 @@ namespace vJMPS.Models
             set
             {
 
-                Debug.WriteLine("ok it is getting this");
+                Debug.WriteLine("ok it is getting this " + value.Key);
                 if (Airframes.TryGetValue(value.Key, out Assembly item))
                 {
                     selectedAirframe = value;
                     Debug.WriteLine("if check worked");
                     AppContainer.LoadAirframe(item);
-                    Debug.WriteLine("AirframeLoaded");
+                    Debug.WriteLine("AirframeLoaded " + value.Key);
                     var module =  AppContainer.Airframe.Resolve<IAirframeModule>();
                     MenuItems = module.MenuItems;
                 }
@@ -59,6 +59,7 @@ namespace vJMPS.Models
                 {
                     if (t.IsTypeOf<IAirframeModule>())
                     {
+                        Debug.WriteLine("found: "+ t.Name);
                         var obj = (IAirframeModule)item.CreateInstance(t.FullName);
                         Airframes.Add(obj.Name, item);
 

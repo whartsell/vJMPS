@@ -162,6 +162,10 @@
       <Project>{6fafee7d-e86a-4b46-8e4a-1da2874935d8}</Project>
       <Name>F5E3</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\TestAirframe\TestAirframe.csproj">
+      <Project>{b5078746-867b-4aa5-aad4-f4d81664c302}</Project>
+      <Name>TestAirframe</Name>
+    </ProjectReference>
     <ProjectReference Include="..\vJMPS\vJMPS.csproj">
       <Project>{5F4FF004-23A1-4FD2-ABE6-44E7B4FE6607}</Project>
       <Name>vJMPS</Name>

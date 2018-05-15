@@ -1,8 +1,10 @@
 ﻿
 
+using vJMPS.ViewModels;
+
 namespace F5E3.Models
 {
-    public class TakeoffModel
+    public class TakeoffModel : ViewModelBase
     {
 
 
