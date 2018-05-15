@@ -7,9 +7,11 @@ namespace F5E3.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Takeoff : ContentPage
 	{
-		public Takeoff ()
+        //private TakeoffViewModel vm;
+		public Takeoff (TakeoffViewModel _vm)
 		{
 			InitializeComponent ();
+            BindingContext = _vm;
 		}
 	}
 }

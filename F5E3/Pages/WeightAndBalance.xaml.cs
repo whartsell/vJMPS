@@ -8,10 +8,10 @@ namespace F5E3.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class WeightAndBalance : ContentPage , ILoadout
 	{
-		public WeightAndBalance ()
+		public WeightAndBalance (WandBViewModel vm)
 		{
 			InitializeComponent ();
-            BindingContext = new WandBViewModel();
+            BindingContext = vm;
 		}
 	}
 }

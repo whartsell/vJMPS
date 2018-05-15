@@ -15,7 +15,6 @@ namespace vJMPS.Pages
 
             InitializeComponent();
             BindingContext = viewModel;
-            //AircraftPicker.SelectedIndexChanged += viewModel.AircraftPicker_SelectedIndexChanged;
 
         }
 

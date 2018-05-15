@@ -23,9 +23,9 @@ namespace F5E3.Models
             }
         }
 
-        public TakeoffModel(WandBModel wandBModel)
+        public TakeoffModel(WandBModel _wandBModel)
         {
-            WandBModel = wandBModel;
+            WandBModel = _wandBModel;
             TakeoffWeight = WandBModel.GrossWeight;
         }
     }

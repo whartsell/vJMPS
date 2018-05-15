@@ -1,27 +1,24 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using vJMPS.Models;
 using vJMPS.Pages;
 
 namespace vJMPS.ViewModels
 {
     class RootPageMasterViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<RootPageMenuItem> MenuItems { get; set; }
-        public RootPageMasterViewModel()
+        private SetupModel model;
+        public ObservableCollection<RootPageMenuItem> MenuItems { get => model.MenuItems; }
+        public RootPageMasterViewModel(SetupModel _model)
         {
-            MenuItems = new ObservableCollection<RootPageMenuItem>(new[]
-            {
-                    new RootPageMenuItem { Id = 0, Title = "Setup", TargetType = typeof(SetupPage) },
-                    //new RootPageMenuItem { Id = 1, Title = "Weight and Balance" , TargetType = test},
-                    new RootPageMenuItem { Id = 2, Title = "Takeoff" },
-                    new RootPageMenuItem { Id = 3, Title = "Ingress", TargetType = typeof(RootPageDetail) },
-                    new RootPageMenuItem { Id = 4, Title = "Combat" },
-                    new RootPageMenuItem { Id = 5, Title = "Egress"},
-                    new RootPageMenuItem { Id = 6, Title = "Landing"},
-                    new RootPageMenuItem {Id = 7, Title = "Diversion"},
-                    new RootPageMenuItem {Id = 8, Title = "Mission Card"}
-                });
+            model = _model;
+            model.PropertyChanged += Model_PropertyChanged;
+        }
+
+        private void Model_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            OnPropertyChanged(e.PropertyName);
         }
 
         #region INotifyPropertyChanged Implementation

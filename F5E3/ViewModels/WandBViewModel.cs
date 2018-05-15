@@ -8,9 +8,9 @@ namespace F5E3.ViewModels
     {
         private WandBModel loadoutModel;
 
-        public WandBViewModel()
+        public WandBViewModel(WandBModel _model)
         {
-            loadoutModel = new WandBModel();
+            loadoutModel = _model;
             CalcAndNotify();
         }
         public double CenterLineWeight

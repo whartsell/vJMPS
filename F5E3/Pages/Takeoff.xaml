@@ -4,9 +4,12 @@
              x:Class="F5E3.Pages.Takeoff">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Center of Gravity:"/>
+                <Label Text="{Binding CG}"/>
+                <Label Text="Gross Weight:"/>
+                <Label Text="{Binding TakeoffWeight}"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

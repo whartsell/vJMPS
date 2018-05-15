@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using vJMPS.Models;
-using Xamarin.Forms;
+using vJMPS.Pages;
 
 namespace vJMPS.ViewModels
 {
@@ -16,40 +16,28 @@ namespace vJMPS.ViewModels
         public SetupViewModel(SetupModel _model)
         {
             model = _model;
+            model.PropertyChanged += Model_PropertyChanged;
             Debug.WriteLine("SetupViewModel Setup");
-            selectedAirframe = "Nothing Yet";
-
         }
 
-        private string selectedAirframe;
+        private void Model_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            OnPropertyChanged(e.PropertyName);
+        }
 
         public string SelectedAirframe
         {
-            get { return selectedAirframe; }
+            get { return model.SelectedAirframe.Key; }
             set
             {
-                selectedAirframe = value;
-                Debug.WriteLine("ok it is getting this");
-                if (model.Airframes.TryGetValue(value,out Assembly item))
+                if (model.Airframes.ContainsKey(value))
                 {
-                    Debug.WriteLine("if check worked");
-                    AppContainer.LoadAirframe(item);
-                    Debug.WriteLine("AirframeLoaded");
+                    model.SelectedAirframe = new KeyValuePair<string, Assembly>(value, model.Airframes[value]);
+                    OnPropertyChanged("SelectedAirframe");
                 }
-                OnPropertyChanged("SelectedAirframe");
             }
         }
 
-
-        public void AircraftPicker_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var picker = sender as Picker;
-            if (model.Airframes.TryGetValue(picker.SelectedItem.ToString(), out Assembly item))
-            {
-                AppContainer.LoadAirframe(item);
-                Debug.WriteLine("caught you");
-            }
-
-        }
+        
     }
 }
