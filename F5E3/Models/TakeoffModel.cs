@@ -1,5 +1,6 @@
 ﻿
 
+using vJMPS.Core;
 using vJMPS.ViewModels;
 
 namespace F5E3.Models
@@ -24,6 +25,8 @@ namespace F5E3.Models
                 // the 18lbs/min should prolly be a setting somewhere
             }
         }
+
+        public Airport SelectedAirport { get; internal set; }
 
         public TakeoffModel(WandBModel _wandBModel)
         {
