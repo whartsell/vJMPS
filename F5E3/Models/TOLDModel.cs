@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using vJMPS.Core;
+﻿using vJMPS.Core;
 using vJMPS.Models;
 using vJMPS.ViewModels;
 

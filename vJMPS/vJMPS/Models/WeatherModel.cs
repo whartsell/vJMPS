@@ -1,6 +1,4 @@
-﻿
-using System;
-using vJMPS.ViewModels;
+﻿using vJMPS.ViewModels;
 
 namespace vJMPS.Models
 {
@@ -13,7 +11,7 @@ namespace vJMPS.Models
         public WeatherModel()
         {
             Pressure = 29.92; //inhg
-            Temperature = 15; //C
+            Temperature = 15; //C          
             Wind = new WindModel();
         }
 

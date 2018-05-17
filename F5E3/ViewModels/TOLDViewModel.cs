@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using vJMPS.Core;
-using vJMPS.Models;
 using vJMPS.ViewModels;
 using Xamarin.Forms;
 
@@ -13,6 +12,8 @@ namespace F5E3.ViewModels
     public abstract class TOLDViewModel : ViewModelBase
     {
         protected TOLDModel _model;
+        
+
         public double Pressure
         {
             get => _model.Weather.Pressure;
@@ -20,6 +21,22 @@ namespace F5E3.ViewModels
             {
                 _model.Weather.Pressure = value;
                 OnPropertyChanged("Pressure");
+                OnPropertyChanged("PressureAltitude");
+            }
+        }
+
+        public double Temperature { get => _model.Weather.Temperature; set { _model.Weather.Temperature = value; OnPropertyChanged("Temperature"); } }
+
+        public double PressureAltitude
+        {
+            get
+            {
+                if (SelectedAirport != null)
+                {
+                    return _model.Weather.PressureAltitude(SelectedAirport.Elevation);
+                }
+                else return 0;
+
             }
         }
         protected TOLDViewModel(TOLDModel model)
@@ -60,6 +77,7 @@ namespace F5E3.ViewModels
                 OnPropertyChanged("Runways");
                 SelectedRunway = null;
                 OnPropertyChanged("SelectedRunway");
+                OnPropertyChanged("PressureAltitude");
                 CalcAndNotify();
             }
         }

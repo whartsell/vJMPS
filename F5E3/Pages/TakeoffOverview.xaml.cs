@@ -11,7 +11,6 @@ namespace F5E3.Pages
         {
             InitializeComponent();
             BindingContext = _vm;
-            AirportPicker.SelectedIndexChanged += _vm.SelectedAirportIndexChanged;
         }
     }
 }

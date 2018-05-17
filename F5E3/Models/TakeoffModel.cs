@@ -1,9 +1,5 @@
-﻿
-
-using System.Reflection;
+﻿using System.Reflection;
 using vJMPS.Core;
-using vJMPS.Models;
-using vJMPS.ViewModels;
 
 namespace F5E3.Models
 {
@@ -17,9 +13,13 @@ namespace F5E3.Models
         public double AftStickSpeed { get; internal set; }
         public double ObstacleClearanceSpeed { get; internal set; }
         public double TakeoffWeight { get; internal set; }
+        public double TakeoffFactor { get; set; }
+        public bool AntiIceOn { get; set; }
         private int _taxiTime;
         private readonly CompoundChartSeries takeoffSpeedSeries;
         private readonly CompoundChartSeries obstacleClearanceSpeedSeries;
+        private CompoundChartSeries runwayTemperatureSeries;
+        private ChartSeries maxThrust, maxThrustAI;
 
         public int TaxiTime //taxi time in minutes
         {
@@ -32,7 +32,7 @@ namespace F5E3.Models
             }
         }
 
-        public TakeoffModel(WandBModel _wandBModel) :base()
+        public TakeoffModel(WandBModel _wandBModel) : base()
         {
             WandBModel = _wandBModel;
             TakeoffWeight = WandBModel.GrossWeight;
@@ -40,6 +40,11 @@ namespace F5E3.Models
             string resource = "F5E3.data.TakeOffSpeed.json";
             takeoffSpeedSeries = SeriesHelpers.CompoundChartSeriesFromResourceJSON(assembly, resource, "TakeoffSpeed");
             obstacleClearanceSpeedSeries = SeriesHelpers.CompoundChartSeriesFromResourceJSON(assembly, resource, "ObstacleClearanceSpeed");
+            resource = "F5E3.data.TakeoffFactor.json";
+            runwayTemperatureSeries = SeriesHelpers.CompoundChartSeriesFromResourceJSON(assembly, resource, "RunwayTemperature");
+            maxThrust = SeriesHelpers.ChartSeriesFromResourceJSON(assembly, resource, "MaxThrust");
+            maxThrustAI = SeriesHelpers.ChartSeriesFromResourceJSON(assembly, resource, "MaxThrustAntiIce");
+
         }
 
         public void CalculateTOandOCSpeeds()
@@ -57,6 +62,27 @@ namespace F5E3.Models
             }
             AftStickSpeed = TakeoffSpeed - 10;
             ObstacleClearanceSpeed = obstacleClearanceSpeedSeries.Interpolate(TakeoffWeight, WandBModel.CG);
+        }
+        public void CalculateTakeoffFactor()
+        {
+            double elevation;
+            if (SelectedAirport == null)
+            {
+                elevation = 0;
+            }
+            else
+            {
+                elevation = SelectedAirport.Elevation;
+            }
+            var fx = runwayTemperatureSeries.Interpolate(Weather.Temperature, Weather.PressureAltitude(elevation));
+            if (AntiIceOn)
+            {
+                TakeoffFactor = maxThrustAI.Interpolate(fx);
+            }
+            else
+            {
+                TakeoffFactor = maxThrust.Interpolate(fx);
+            }
         }
     }
 }

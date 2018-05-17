@@ -9,15 +9,22 @@
                 <Picker x:Name="RunwayPicker" Title="Runway" ItemsSource="{Binding Runways}" />
             </StackLayout>
             <StackLayout Orientation="Horizontal">
+                <Label Text="Altimeter setting (InHg)"/>
+                <Entry Text="{Binding Pressure}"/>
+                
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Temperature (C)"/>
+                <Entry Text="{Binding Temperature}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
                 <Label Text="{Binding SelectedAirport.Name}"/>
                 <Label Text="{Binding SelectedRunway.Name,StringFormat= 'RWY{0}'}"/>
                 <Label Text="{Binding SelectedRunway.UsableDistance,StringFormat = '{0} feet useable'}"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Altimeter setting InHg"/>
-                <Entry Text="{Binding Pressure}"/>
                 <Label Text="{Binding Pressure}"/>
-            </StackLayout>    
+                <Label Text="{Binding Temperature,StringFormat='{0}C'}"/>
+                <Label Text="{Binding PressureAltitude, StringFormat='{0} feet pressure altitude'}"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

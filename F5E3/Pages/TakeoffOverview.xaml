@@ -8,30 +8,19 @@
             <StackLayout Orientation="Horizontal">
                 <Label Text="Taxi Time (min):"/>
                 <Entry Text="{Binding TaxiTime}"/>
+                <Label Text="Use AntiIce"/>
+                <Switch IsToggled="{Binding AntiIceOn}"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Picker x:Name="AirportPicker" Title="Airport" ItemsSource="{Binding Airports}"/>
-                <Picker x:Name="RunwayPicker" Title="Runway" ItemsSource="{Binding Runways}" SelectedItem="{Binding SelectedRunway}"/>
+                <Label Text="{Binding TakeoffSpeed,StringFormat='Takeoff Speed:{0}kts'}"/>
+                <Label Text="{Binding AftStickSpeed,StringFormat='Aft Stick Speed:{0}kts'}"/>
+                <Label Text="{Binding ObstacleClearanceSpeed,StringFormat='Obstacle Clearance Speed:{0}kts'}"/>
+                
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="{Binding SelectedAirport.Name}"/>
-
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Takeoff Speed:"/>
-                <Label Text="{Binding TakeoffSpeed}"/>
-                <Label Text="Obstacle Clearance Speed:"/>
-                <Label Text="{Binding ObstacleClearanceSpeed}"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Aft Stick Speed:"/>
-                <Label Text="{Binding AftStickSpeed}"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Center of Gravity:"/>
-                <Label Text="{Binding CG}"/>
-                <Label Text="Takeoff Weight:"/>
-                <Label Text="{Binding TakeoffWeight}"/>
+                <Label Text="{Binding TakeoffWeight,StringFormat='Takeoff Weight:{0}lbs'}"/>
+                <Label Text="{Binding CG,StringFormat='CG:{0}%MAC'}"/>
+                <Label Text="{Binding TakeoffFactor,StringFormat='Takeoff Factor:{0}'}"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

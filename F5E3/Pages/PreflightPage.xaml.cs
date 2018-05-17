@@ -13,11 +13,15 @@ namespace F5E3.Pages
         {
             InitializeComponent();
             Children.Add(AppContainer.Airframe.Resolve<WeightAndBalance>());
-            TOLDFieldPage Takeoff = new TOLDFieldPage(AppContainer.Airframe.Resolve<TakeoffViewModel>());
-            Takeoff.Title = "Takeoff Field";
+            TOLDFieldPage Takeoff = new TOLDFieldPage(AppContainer.Airframe.Resolve<TakeoffViewModel>())
+            {
+                Title = "Takeoff Field"
+            };
             Children.Add(Takeoff);
-            TOLDFieldPage Landing = new TOLDFieldPage(AppContainer.Airframe.Resolve<LandingViewModel>());
-            Landing.Title = "Landing Field";
+            TOLDFieldPage Landing = new TOLDFieldPage(AppContainer.Airframe.Resolve<LandingViewModel>())
+            {
+                Title = "Landing Field"
+            };
             Children.Add(Landing);
         }
     }

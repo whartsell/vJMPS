@@ -1,7 +1,6 @@
-﻿
-using F5E3.Models;
+﻿using F5E3.Models;
 using vJMPS.Core;
-using vJMPS.Models;
+
 
 namespace F5E3.ViewModels
 {
@@ -21,6 +20,7 @@ namespace F5E3.ViewModels
         public double TakeoffSpeed { get { return takeoffModel.TakeoffSpeed.SigFigs(3); } }
         public double AftStickSpeed { get { return takeoffModel.AftStickSpeed.SigFigs(3); } }
         public double ObstacleClearanceSpeed { get { return takeoffModel.ObstacleClearanceSpeed.SigFigs(3); } }
+        public double TakeoffFactor { get => takeoffModel.TakeoffFactor.SigFigs(3); }
         
 
         public int TaxiTime //taxi time in minutes
@@ -32,7 +32,7 @@ namespace F5E3.ViewModels
                 CalcAndNotify();
             }
         }
-
+        public bool AntiIceOn { get =>takeoffModel.AntiIceOn; set { takeoffModel.AntiIceOn = value;CalcAndNotify(); } }
 
 
 
@@ -44,10 +44,12 @@ namespace F5E3.ViewModels
         {
             base.CalcAndNotify();
             takeoffModel.CalculateTOandOCSpeeds();
+            takeoffModel.CalculateTakeoffFactor();
             OnPropertyChanged("TakeoffSpeed");
             OnPropertyChanged("AftStickSpeed");
             OnPropertyChanged("ObstacleClearanceSpeed");
             OnPropertyChanged("TakeoffWeight");
+            OnPropertyChanged("TakeoffFactor");
         }
     }
 }
