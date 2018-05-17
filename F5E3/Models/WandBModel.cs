@@ -3,6 +3,18 @@ namespace F5E3.Models
 {
     public class WandBModel : ViewModelBase
     {
+        public WandBModel()
+        {
+            OutboardStoresWeight = 0;
+            InboardStoresWeight = 0;
+            CenterStoresWeight = 0;
+            HasMissiles = false;
+            Ammo = 0;
+            GrossWeight = 15050;
+            CG = 17.5;
+
+        }
+
         private double _outboardStoresWeght;
         public double OutboardStoresWeight
         {
@@ -10,7 +22,7 @@ namespace F5E3.Models
             set
             {
                 _outboardStoresWeght = value;
-                
+
             }
 
         }
@@ -23,7 +35,7 @@ namespace F5E3.Models
             set
             {
                 _inbaordStoresWeight = value;
-                
+
             }
         }
 
@@ -35,7 +47,7 @@ namespace F5E3.Models
             set
             {
                 _centerStoresWeight = value;
-                
+
             }
         }
 
@@ -47,7 +59,7 @@ namespace F5E3.Models
             set
             {
                 _hasMissiles = value;
-                
+
             }
         }
 
@@ -56,8 +68,10 @@ namespace F5E3.Models
         public double Ammo
         {
             get { return _ammo; }
-            set { _ammo = value;
-                
+            set
+            {
+                _ammo = value;
+
             }
         }
 
@@ -66,8 +80,10 @@ namespace F5E3.Models
         public double CG
         {
             get { return _cg; }
-            internal set { _cg = value;
-                
+            internal set
+            {
+                _cg = value;
+
             }
         }
 
@@ -79,11 +95,11 @@ namespace F5E3.Models
             internal set
             {
                 _grossweight = value;
-                
+
             }
         }
 
-        
+
 
     }
 }

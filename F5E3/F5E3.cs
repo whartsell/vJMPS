@@ -15,11 +15,14 @@ namespace F5E3
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<TakeoffModel>().SingleInstance();
+            builder.RegisterType<LandingModel>().SingleInstance();
             builder.RegisterType<WandBModel>().SingleInstance();
             builder.RegisterType<WandBViewModel>().SingleInstance();
             builder.RegisterType<TakeoffViewModel>().SingleInstance();
+            builder.RegisterType<LandingViewModel>().SingleInstance();
             builder.RegisterType<TakeoffOverview>();
             builder.RegisterType<WeightAndBalance>();
+            builder.RegisterType<PreflightPage>().SingleInstance();
             builder.RegisterType<TakeoffPage>();
            
             builder.RegisterType<F5E3>().SingleInstance().As<IAirframeModule>();
@@ -28,7 +31,7 @@ namespace F5E3
         private static ObservableCollection<RootPageMenuItem> menuItems = new ObservableCollection<RootPageMenuItem>(new[]
             {
                     new RootPageMenuItem { Id = 0, Title = "Setup", TargetType = typeof(SetupPage) },
-                    new RootPageMenuItem { Id = 1, Title = "Weight and Balance" , TargetType = typeof(WeightAndBalance)},
+                    new RootPageMenuItem { Id = 1, Title = "PreFlight" , TargetType = typeof(PreflightPage)},
                     new RootPageMenuItem { Id = 2, Title = "Takeoff", TargetType = typeof(TakeoffPage) },
                     //new RootPageMenuItem { Id = 3, Title = "Takeoff Tabbed", TargetType = typeof (TakeoffTabbed)},
                     //new RootPageMenuItem { Id = 3, Title = "Ingress", TargetType = typeof(RootPageDetail) },

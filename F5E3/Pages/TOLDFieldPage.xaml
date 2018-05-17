@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="F5E3.Pages.TOLDFieldPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Picker x:Name="AirportPicker" Title="Airport" ItemsSource="{Binding Airports}"/>
+                <Picker x:Name="RunwayPicker" Title="Runway" ItemsSource="{Binding Runways}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="{Binding SelectedAirport.Name}"/>
+                <Label Text="{Binding SelectedRunway.Name,StringFormat= 'RWY{0}'}"/>
+                <Label Text="{Binding SelectedRunway.UsableDistance,StringFormat = '{0} feet useable'}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Altimeter setting InHg"/>
+                <Entry Text="{Binding Pressure}"/>
+                <Label Text="{Binding Pressure}"/>
+            </StackLayout>    
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

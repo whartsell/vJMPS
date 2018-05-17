@@ -5,6 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Collections.Generic;
 using vJMPS.Core;
+using vJMPS.Models;
 
 
 namespace vJMPSTests
@@ -25,12 +26,22 @@ namespace vJMPSTests
             Assert.AreEqual(-1000, test2.SigFigs(1));
         }
 
+        [TestMethod]
+        public void PressureAltitudeTests()
+        {
+            double altitude = 1000;
+            var weather = new WeatherModel
+            {
+                Pressure = 29.92,
+            };
+            Assert.AreEqual(1000, weather.PressureAltitude(altitude).SigFigs(3));
+        }
 
         [TestMethod]
         public void GrossWeightAndCGPositionChart()
         {
-
-            var chart = new WandBViewModel
+            
+            var chart = new WandBViewModel(new WandBModel())
             {
                 OutboardStoresWeight = 1318,
                 InboardStoresWeight = 1306,
